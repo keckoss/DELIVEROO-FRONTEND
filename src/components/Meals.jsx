@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cart from "./Cart";
 
 function Meals(props) {
   const { data } = props;
   const mealsData = data.categories;
   const [cartItems, setCartItems] = useState([]);
-  const [showCart, setShowCart] = useState(true); // Variable de suivi pour l'état actuel
+  const [showCart, setShowCart] = useState(true);
+  const [isCartEmpty, setIsCartEmpty] = useState(true);
 
-  // Vérifier si mealsData est undefined ou null
+  useEffect(() => {
+    setIsCartEmpty(cartItems.length === 0);
+  }, [cartItems]);
+
   if (!mealsData) {
-    return "loading"; // Ou affichez un message d'erreur approprié
+    return "loading";
   }
 
   const truncateText = (text, maxLength) => {
@@ -70,18 +74,8 @@ function Meals(props) {
   );
 
   const toggleCartDisplay = () => {
-    const cartElement = document.querySelector(".cartclass2");
-
-    if (cartElement.style.display === "none") {
-      cartElement.style.display = "flex";
-    } else {
-      cartElement.style.display = "none";
-    }
-
-    setShowCart(!showCart); // Inverser l'état actuel
+    setShowCart(!showCart);
   };
-
-  const isCartEmpty = cartItems.length === 0;
 
   return (
     <div className="bgrey">
@@ -89,7 +83,7 @@ function Meals(props) {
         <div className="meals">
           {mealsData.map((category) => {
             if (category.meals.length === 0) {
-              return null; // ne pas afficher les catégories vides
+              return null;
             }
 
             return (
@@ -129,7 +123,9 @@ function Meals(props) {
             );
           })}
         </div>
-        <div className="cartclass">
+        <div
+          className={`cartclass ${!isCartEmpty && showCart ? "show-cart" : ""}`}
+        >
           <Cart
             cartItems={cartItems}
             totalPrice={calculateTotalPrice()}
@@ -140,8 +136,16 @@ function Meals(props) {
         </div>
       </div>
       {!isCartEmpty && (
-        <div className="parent-container">
-          <div className={showCart ? "cartclass2" : "cartclass2 hidden"}>
+        <div
+          className={`parent-container ${
+            !isCartEmpty && showCart ? "show-cart" : ""
+          }`}
+        >
+          <div
+            className={`cartclass2 ${
+              !isCartEmpty && showCart ? "show-cart" : ""
+            }`}
+          >
             <Cart
               cartItems={cartItems}
               totalPrice={calculateTotalPrice()}
