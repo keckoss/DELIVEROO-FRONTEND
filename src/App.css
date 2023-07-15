@@ -310,7 +310,15 @@
   .cartbox {
     width: 100%;
   }
-
+  .disabled {
+    opacity: 0.5; /* Réduire l'opacité pour indiquer qu'il est désactivé */
+    pointer-events: none; /* Désactiver les événements de clic */
+    cursor: not-allowed; /* Changer le curseur pour indiquer qu'il est désactivé */
+  }
+  .cartmobilebutton.disabled {
+    pointer-events: none; /* Désactive les événements de clic */
+    opacity: 0.5; /* Réduit l'opacité pour indiquer qu'il est désactivé */
+  }
   /* .aligncartmobile {
     background-color: blue;
     margin: 0 auto;

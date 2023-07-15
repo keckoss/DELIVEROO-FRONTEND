@@ -81,6 +81,8 @@ function Meals(props) {
     setShowCart(!showCart); // Inverser l'état actuel
   };
 
+  const isCartEmpty = cartItems.length === 0;
+
   return (
     <div className="bgrey">
       <div className="generalmeals">
@@ -148,7 +150,10 @@ function Meals(props) {
           />
         </div>
         <div className="aligncartmobile">
-          <div className="cartmobilebutton" onClick={toggleCartDisplay}>
+          <div
+            className={`cartmobilebutton ${isCartEmpty ? "disabled" : ""}`}
+            onClick={toggleCartDisplay}
+          >
             <div>{totalQuantity}</div>
             <div>voir le panier</div>
             <div>{calculateTotalPrice().toFixed(2)}€</div>
