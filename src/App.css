@@ -1,0 +1,321 @@
+@font-face {
+  font-family: generale;
+  src: url(./assets/fonts/deliveroo-fonts_dfnsdf/IBMPlexSans.ttf);
+}
+#root {
+  font-family: generale;
+}
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+.cartclass2 {
+  display: none;
+}
+.colorclear {
+  color: #868a8a;
+}
+.cartmobilebutton {
+  display: none;
+}
+.colorblack {
+  color: #2e3333;
+}
+
+.header {
+  height: 60px;
+  border-bottom: solid 1px lightgray;
+  display: flex;
+  align-items: center;
+}
+.header img {
+  width: 160px;
+  height: 40px;
+}
+.shop {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.shopart1 h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+.shopart1 p {
+  font-size: 19px;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+.shopimg {
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.cat {
+  padding-top: 20px;
+}
+.meals {
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+}
+.mealspicture {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.cat {
+  font-size: 24px;
+  font-weight: bold;
+}
+.mealsbloc {
+  width: 400px;
+  height: 160px;
+}
+.mealschild {
+  display: flex;
+}
+
+.mealsBlock {
+  margin-right: 10px;
+}
+
+.mealsPicture {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+}
+.mealsChild {
+  background-color: white;
+  height: 160px;
+  display: flex;
+  margin-top: 20px;
+  padding: 15px;
+  justify-content: space-between;
+  /* Autres styles... */
+  transition: box-shadow 0.3s ease;
+  border-radius: 10px;
+  /* Styles pour chaque objet meals */
+}
+.mealsChild:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.mealsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mealsBlock {
+  width: 48%; /* Pour diviser l'espace en deux colonnes */
+  margin-bottom: 10px; /* Espacement entre les éléments */
+}
+.mealschild1 {
+  width: 216px;
+  height: 130px;
+}
+.mealschild2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mealschild1 h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.mealschild1 p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.mealschild2 img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+#price {
+  margin-top: 25px;
+  font-size: 17px;
+  color: #868a8a;
+}
+.generalmeals {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.cartclass {
+  width: 450px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.bgrey {
+  background-color: #ededed;
+}
+.cartbox {
+  background-color: white;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.fixedCart {
+  position: sticky;
+  height: fit-content; /* Add this line */
+  top: 25px; /* Ajoutez la marge haute souhaitée */
+}
+.barre-horizontale {
+  border-bottom: 1px solid black; /* Remplacez "black" par la couleur de votre choix */
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.insidecart {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.insidecart div {
+  display: flex;
+  justify-content: space-around;
+}
+.emptycart {
+  display: flex;
+  justify-content: center;
+}
+.validcart {
+  height: 50px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: #33cdbd;
+  border: none;
+  border-radius: 5px;
+}
+.validcart:disabled {
+  background-color: #bac3c3;
+  color: #a3afaf;
+}
+.emptycartmessage {
+  margin-bottom: 30px;
+}
+
+.plusminusbutton {
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  background-color: white;
+  border: solid 2px #33cdbd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+.articles {
+  gap: 5px;
+}
+@media (max-width: 1300px) {
+  .cartclass {
+    display: none;
+  }
+  .shop {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .container {
+    width: 100%;
+    margin-top: 0;
+  }
+  .shopimg {
+    display: flex;
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0;
+    object-fit: cover;
+  }
+  .shopart1 {
+    margin-top: 15px;
+  }
+  .mealsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .generalmeals {
+    display: flex;
+    width: 100%;
+  }
+  .grosbloc {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .meals {
+    display: flex;
+    width: 100%;
+    flex: 1;
+  }
+  .mealsChild {
+    display: flex;
+    width: 100%;
+  }
+  .mealschild1 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .mealsBlock {
+    display: flex;
+    width: 100%;
+  }
+
+  .cartmobilebutton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+    background-color: #8f3c82;
+    color: #fff;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .aligncartmobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: #fff;
+    height: 75px;
+  }
+  .cartclass2 {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 75px; /* Ajoutez la valeur souhaitée pour l'espace en pixels ou toute autre unité de mesure */
+  }
+  .cartbox {
+    width: 100%;
+  }
+
+  /* .aligncartmobile {
+    background-color: blue;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  } */
+}
