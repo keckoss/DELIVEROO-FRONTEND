@@ -139,27 +139,29 @@ function Meals(props) {
           />
         </div>
       </div>
-      <div className="parent-container">
-        <div className={showCart ? "cartclass2" : "cartclass2 hidden"}>
-          <Cart
-            cartItems={cartItems}
-            totalPrice={calculateTotalPrice()}
-            removeFromCart={removeFromCart}
-            incrementQuantity={incrementQuantity}
-            decrementQuantity={decrementQuantity}
-          />
-        </div>
-        <div className="aligncartmobile">
-          <div
-            className={`cartmobilebutton ${isCartEmpty ? "disabled" : ""}`}
-            onClick={toggleCartDisplay}
-          >
-            <div>{totalQuantity}</div>
-            <div>voir le panier</div>
-            <div>{calculateTotalPrice().toFixed(2)}€</div>
+      {!isCartEmpty && (
+        <div className="parent-container">
+          <div className={showCart ? "cartclass2" : "cartclass2 hidden"}>
+            <Cart
+              cartItems={cartItems}
+              totalPrice={calculateTotalPrice()}
+              removeFromCart={removeFromCart}
+              incrementQuantity={incrementQuantity}
+              decrementQuantity={decrementQuantity}
+            />
+          </div>
+          <div className="aligncartmobile">
+            <div
+              className={`cartmobilebutton ${isCartEmpty ? "disabled" : ""}`}
+              onClick={toggleCartDisplay}
+            >
+              <div>{totalQuantity}</div>
+              <div>voir le panier</div>
+              <div>{calculateTotalPrice().toFixed(2)}€</div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
